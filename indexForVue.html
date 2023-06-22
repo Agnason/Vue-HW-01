@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+
+<body>
+    <div id="app">
+        <h3>Создать кнопку "Перевернуть". При клике на кнопку текст кнопки, должен перевернуться и отобразиться в
+            обратном порядке.</h3>
+        <button v-on:click="reverseMessage">{{ btnText }}</button>
+
+        <h3>Есть список элементов. Пользователь может добавлять новые элементы списка с текстом “Новый элемент списка”
+            нажав на
+            кнопку "Добавить".
+            * При клике на элемент списка он должен быть удален. (по желанию)</h3>
+        <button v-on:click="addNewList">Добавить</button>
+        <ol>
+            <li v-if="todo.seen" v-on:click="deleteList(todo)" v-for="todo in todos">
+                {{ todo.text }}
+            </li>
+        </ol>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="taskVue.js"></script>
+</body>
+
+</html>
